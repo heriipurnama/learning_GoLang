@@ -2,8 +2,6 @@ package main
 
 import "fmt"
 
-
-func main() {
-	fmt.Println("Hello Golang")
+func main() { // function main
+	fmt.Println("Hello Golang") // logger
 }
-
