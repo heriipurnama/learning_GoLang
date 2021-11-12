@@ -248,7 +248,7 @@ func main() {
 
 	fmt.Println("copySlice: ", copySlice)
 
-	// perbedaan array
+	// perbedaan array dan slice
 	iniArray := [...]int{0, 1, 2, 3, 4}
 	iniArrays := [5]int{0, 1, 2, 3, 4}
 
@@ -270,4 +270,27 @@ func main() {
 	fmt.Println("daySlice:", daySlice2)
 	fmt.Println("days:", days)
 
+	// function make
+
+	newSlice1 := make([]string, 2, 5) // slice sdh didefinisikan
+	newSlice1[0] = "herii"
+	newSlice1[1] = "purnama"
+
+	fmt.Println("newSlice", newSlice1)
+	fmt.Println("newSlice len", len(newSlice1))
+	fmt.Println("newSlice cap", cap(newSlice1))
+
+	// copy slice
+	fmt.Println("-copy slice-")
+	fromSlice := days[2:4]
+	toSlice := make([]string, len(fromSlice), cap(fromSlice))
+
+	copy(toSlice, fromSlice)
+
+	fmt.Println("fromSlice len:", len(fromSlice))
+
+	copySlice1 := make([]string, len(newSlice1), cap(newSlice1))
+
+	copy(copySlice1, newSlice1)
+	fmt.Println("copySlice :", copySlice1)
 }
