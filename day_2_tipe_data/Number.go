@@ -257,4 +257,17 @@ func main() {
 	fmt.Println("iniArray: ", iniArray)
 	fmt.Println("iniArrays: ", iniArrays)
 	fmt.Println("iniSlice: ", iniSlice)
+
+	// slice append
+	days := [...]string{"senin", "selasa", "rabu", "kamis", "jumat", "sabtu", "minggu"}
+	daySlice1 := days[5:]
+	daySlice1[0] = "sabtu baru"
+	daySlice1[1] = "minggu baru"
+	fmt.Println("days:", days)
+
+	daySlice2 := append(daySlice1, "Libur Baru")
+	daySlice2[0] = "Ups"
+	fmt.Println("daySlice:", daySlice2)
+	fmt.Println("days:", days)
+
 }
