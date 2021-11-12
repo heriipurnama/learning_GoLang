@@ -293,4 +293,36 @@ func main() {
 
 	copy(copySlice1, newSlice1)
 	fmt.Println("copySlice :", copySlice1)
+
+	fmt.Println("=========TIPE DATA slice==========")
+	iniArray1 := [4]int{1, 2, 3, 4}
+	iniSlice1 := []int{1, 2, 3, 4}
+
+	fmt.Println("ini aray", iniArray1)
+	fmt.Println("ini slice", iniSlice1)
+
+	fmt.Println("=== tipe data map")
+	person := map[string]string{
+		"name":    "herii",
+		"address": "jgj",
+	}
+	// nambah data
+	person["title"] = "entrepreneur"
+
+	fmt.Println("===")
+	fmt.Println("person", person)
+	fmt.Println("person name: ", person["name"])
+	fmt.Println("person addres: ", person["address"])
+	fmt.Println("person title: ", person["title"])
+
+	// make
+	book := make(map[string]string)
+
+	book["title"] = "Golang"
+	book["author"] = "heriipurnama"
+	book["page"] = "126"
+	fmt.Println("sebelum dihapus==> ", book)
+	delete(book, "page")
+	fmt.Println("sesudah Book : ", book)
+
 }
