@@ -325,4 +325,34 @@ func main() {
 	delete(book, "page")
 	fmt.Println("sesudah Book : ", book)
 
+	// if statemen
+	nameEmployee := "herii"
+
+	if nameEmployee == "herii" {
+		fmt.Println("hello herii")
+	} else if nameEmployee == "purnama" {
+		fmt.Println("hai purnama")
+	} else {
+		fmt.Println("HI, boleh kenalan")
+	}
+
+	// if short statement
+	// if standart
+
+	/*
+		var length = len(name)
+		if length > 5 {
+			fmt.Println("nama terlau panjang")
+		} else {
+			fmt.Println("nama sudh benar")
+		}
+	*/
+
+	// if short statement
+	if length := len(name); length > 5 {
+		fmt.Println("nama terlau panjang")
+	} else {
+		fmt.Println("nama sudh benar")
+	}
+
 }
