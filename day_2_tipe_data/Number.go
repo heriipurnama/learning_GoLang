@@ -374,5 +374,74 @@ func main() {
 	case false:
 		fmt.Println("nama sudah benar ")
 	}
+	// switch tanda kondisi
+	length := len(name)
+	switch {
+	case length > 10:
+		fmt.Println("nama terlalu panjang")
+	case length > 5:
+		fmt.Println("nama lumayan panjang")
+	default:
+		fmt.Println("nama sudah benar")
+	}
+	// for loop on
+	fmt.Println("==========FOR=========")
+	counter := 1
+	for counter <= 10 {
+		fmt.Println("perulangan ke-", counter)
+		counter++
+	}
+	// for statement
+	fmt.Println("==========FOR STATEMENT=========")
+	// init statement ,					// post statement
+	for counter1 := 1; counter1 <= 10; counter1++ {
+		fmt.Println("perulangan ke-", counter1)
+	}
+	// for range statement
+	// acces data secara manual
+	// string iterasi
+	fmt.Println("========For Iterasi========")
+	sliceName := []string{"herii", "purnama", "reina"}
+	for i := 0; i < len(sliceName); i++ {
+		fmt.Println("perulangan", sliceName[i])
+	}
+	// for range range statement
+	fmt.Println("========For range=======")
+	for index, sliceName := range sliceName {
+		fmt.Println("index", index, "=", sliceName)
+		fmt.Println("value", sliceName)
+	}
 
+	// map
+	person1 := make(map[string]string)
+	person1["name"] = "heriipurnama"
+	person1["tittle"] = "dev."
+
+	for key, value := range person1 {
+		fmt.Println(key, "=", value)
+	}
+
+	// break into
+	fmt.Println("========break=======")
+	for i = 0; i < 10; i++ {
+
+		fmt.Println("perulangan", i)
+
+		if i == 5 {
+			break
+		}
+
+	}
+	fmt.Println("========continue=======")
+	for i = 0; i < 10; i++ {
+
+		if i%2 == 0 {
+			continue
+		}
+
+		fmt.Println("perulangan", i)
+
+	}
+	fmt.Println("========function=======")
+    
 }
