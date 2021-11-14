@@ -354,5 +354,25 @@ func main() {
 	} else {
 		fmt.Println("nama sudh benar")
 	}
+	// switch statement
+
+	alamat := "Prambanan"
+
+	switch alamat {
+	case "Prambanan":
+		fmt.Println(" case oke")
+	case "Klaten":
+		fmt.Println("salah")
+	default:
+		fmt.Println("salah")
+	}
+
+	// short statement switch
+	switch length := len(name); length > 5 {
+	case true:
+		fmt.Println("nama terlalau panjang")
+	case false:
+		fmt.Println("nama sudah benar ")
+	}
 
 }
