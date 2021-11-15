@@ -46,5 +46,8 @@ func main() {
 	fmt.Println("===returning multiple value===")
 	firstName, lastName := getFullName()
 	fmt.Println("firstName: ", firstName, ",lastName: ", lastName)
-
+	// ignore return values
+	fmt.Println("===ignore returning multiple values")
+	namaDepan, _ := getFullName()
+	fmt.Println("namaDepan: ", namaDepan)
 }
