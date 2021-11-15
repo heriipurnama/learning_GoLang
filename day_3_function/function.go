@@ -45,6 +45,50 @@ func sumAll(number ...int) int { // variadic function
 	return total
 }
 
+// function value
+func getGoodBye(name string) string {
+	return "Good Bye" + name
+}
+
+//function as parameter
+//type declalation
+type Filter func(string) string
+
+func sayHelloWithFilter(name string, filter Filter) {
+	resultFilter := filter(name)
+	fmt.Println("hello ", resultFilter)
+}
+
+// tanpa type declalation
+
+// func sayHelloWithFilter(name string, filter func(string) string) {
+// 	resultFilter := filter(name)
+// 	fmt.Println("hello ", resultFilter)
+// }
+
+func spamFilter(name string) string {
+	if name == "jangkrik" {
+		return "xxx"
+	} else {
+		return name
+	}
+}
+
+// anonymous function
+type Blacklist func(string) bool
+
+func registerUser(name string, blacklist Blacklist) {
+	if blacklist(name) {
+		fmt.Println("you are blocked!", name)
+	} else {
+		fmt.Println("welcome", name)
+	}
+}
+
+// func blacklist(name string) bool {
+// 	return name == "admin"
+// }
+
 func main() {
 	fmt.Println("========function=======")
 	for i := 0; i < 10; i++ {
@@ -84,4 +128,23 @@ func main() {
 	total = sumAll(numbers...)
 	fmt.Println("total: ", total)
 
+	fmt.Println("========= function values =======")
+	goodbye := getGoodBye
+	fmt.Println("goodbye: ", goodbye(" love"))
+	//function as parameter
+	sayHelloWithFilter("heri", spamFilter)
+	filter := spamFilter
+	sayHelloWithFilter("jangkrik", filter)
+	// anonymous function
+	fmt.Println("====Anonymous function===")
+	// function disimpan di variabel
+	blacklist := func(name string) bool {
+		return name == "anjing!"
+	}
+	registerUser("heri", blacklist)
+	registerUser("anjing!", blacklist)
+	// function langsung ditulis di parameter
+	registerUser("heriipurnama", func(name string) bool {
+		return name == "root"
+	})
 }
