@@ -442,6 +442,4 @@ func main() {
 		fmt.Println("perulangan", i)
 
 	}
-	fmt.Println("========function=======")
-    
 }
