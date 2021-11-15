@@ -13,7 +13,17 @@ func sayHeloTo(firstName string, lastName string) {
 
 // function return value
 func getHello(name string) string {
-	return "Hello" + name
+	if name == "" {
+		return "hello"
+	} else {
+		return "Hello" + name
+	}
+
+}
+
+// returning multiple values
+func getFullName() (string, string) {
+	return "herii", "purnama"
 }
 
 func main() {
@@ -31,4 +41,10 @@ func main() {
 	// function return value
 	result := getHello("reina")
 	fmt.Println("result: ", result)
+
+	// returning multiple values
+	fmt.Println("===returning multiple value===")
+	firstName, lastName := getFullName()
+	fmt.Println("firstName: ", firstName, ",lastName: ", lastName)
+
 }
