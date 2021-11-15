@@ -26,6 +26,25 @@ func getFullName() (string, string) {
 	return "herii", "purnama"
 }
 
+// named return values
+func getComplete() (firstName, middleName, lastName string) {
+	firstName = "herii"
+	middleName = "reina"
+	lastName = "purnama"
+
+	return
+	// return firstName, middleName, lastName // type explicit
+}
+
+// variadic function
+func sumAll(number ...int) int { // variadic function
+	total := 0
+	for _, number := range number {
+		total += number
+	}
+	return total
+}
+
 func main() {
 	fmt.Println("========function=======")
 	for i := 0; i < 10; i++ {
@@ -50,4 +69,19 @@ func main() {
 	fmt.Println("===ignore returning multiple values")
 	namaDepan, _ := getFullName()
 	fmt.Println("namaDepan: ", namaDepan)
+	// named return values
+	fmt.Println("===named return values====")
+	firstName, middleName, lastName := getComplete()
+	namaDepan, namaTengah, namaBelakang := getComplete()
+	fmt.Println("firstName: ", firstName, ",middleName: ", middleName, ",lastName: ", lastName)
+	fmt.Println("namaDepan: ", namaDepan, ",namaTengah: ", namaTengah, ",namaBelakang: ", namaBelakang)
+
+	fmt.Println("===varidic function =======")
+	total := sumAll(10, 10, 10, 10, 10)
+	fmt.Println("total: ", total)
+	// slice slice
+	numbers := []int{10, 10, 10, 10, 10, 5}
+	total = sumAll(numbers...)
+	fmt.Println("total: ", total)
+
 }
