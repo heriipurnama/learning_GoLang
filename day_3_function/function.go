@@ -106,6 +106,45 @@ func factorialRecursive(value int) int {
 	}
 }
 
+// defer, panic, recover
+func logging() {
+	fmt.Println("selesai memanggil logging function")
+}
+
+func endApp() {
+	message := recover()
+	fmt.Println("Terjadi ERROR==>> ", message)
+
+	fmt.Println("End App")
+}
+
+func runAppDefer() {
+	defer logging()
+	// pangil function logging di belakang function!
+	//eksekusi meskipun function utama error defer mesti diteteapkan di atas buakn dibawah
+	fmt.Println("RUN Application")
+
+	fmt.Println("RUN Application") // tanpa deffer
+	logging()
+}
+
+func runAppPanic(error bool) {
+
+	defer endApp()
+	if error {
+		panic("==ERROR==")
+	}
+	fmt.Println("RUN Application running")
+}
+
+func runAppRecover(error bool) {
+	defer endApp()
+	if error {
+		panic("==ERROR==")
+	}
+	fmt.Println("RUN Application recover")
+}
+
 func main() {
 	fmt.Println("========function=======")
 	for i := 0; i < 10; i++ {
@@ -169,4 +208,32 @@ func main() {
 	fmt.Println("Loop,", loop)
 	fmt.Println("factorial:", 5*4*3*2*1)
 	fmt.Println("factorial recursive:", factorialRecursive(5))
+
+	// closure function
+	fmt.Println("==== closure ===")
+	addr := "ygj"
+	counter := 0
+
+	increment := func() {
+		// data diluar scope bisa diakses dari dalam scope
+		addr = "jkt"
+		// addr := "smrg" // tanda deklarasi variabel
+		fmt.Println("increment")
+		counter++
+	}
+	// data didalam scope tidak bisa diakses dari luar scope
+
+	increment()
+	increment()
+	fmt.Println("course: ", counter)
+	fmt.Println("addr: ", addr)
+
+	fmt.Println("===== defer, panic, recover ====")
+	fmt.Println("=== defer ===")
+	runAppDefer()
+	fmt.Println("=== panic ===")
+	runAppPanic(false)
+	fmt.Println("=== recover ===")
+	runAppRecover(true)
+
 }
