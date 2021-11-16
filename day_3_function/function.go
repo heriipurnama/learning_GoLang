@@ -116,7 +116,7 @@ func endApp() {
 	fmt.Println("End App")
 	message := recover()
 	if message != nil {
-		fmt.Println("Terjadi ERROR==>> ", message)
+		fmt.Println("Terjadi ERROR: ", message)
 	}
 
 }
