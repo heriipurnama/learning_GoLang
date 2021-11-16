@@ -112,10 +112,11 @@ func logging() {
 }
 
 func endApp() {
+
+	fmt.Println("End App")
 	message := recover()
 	fmt.Println("Terjadi ERROR==>> ", message)
 
-	fmt.Println("End App")
 }
 
 func runAppDefer() {
