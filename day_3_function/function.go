@@ -236,5 +236,6 @@ func main() {
 	runAppPanic(false)
 	fmt.Println("=== recover ===")
 	runAppRecover(true)
+	fmt.Println("heriipurnama")
 
 }
