@@ -148,6 +148,36 @@ func runAppRecover(error bool) {
 	fmt.Println("RUN Application recover")
 }
 
+// struct
+type Customer struct {
+	Name, Address string
+	Age           int
+	Married       bool
+	/*
+		struct adalah template data atau template data.
+
+		cara penulisan struct:
+		* nama struct
+			1 kata = Customer
+			2 kata = CustomerData
+		* field struct
+			kebiasan namanya dengan diawali huruf BESAR
+			Nama bukan nama
+
+	*/
+}
+
+// struct function/method
+// seolah2 struct punya function
+func (customer Customer) sayHi(name string) {
+	fmt.Println("=== hai! ===", name, "my name is", customer.Name)
+}
+
+func (customer Customer) sayHell() {
+	fmt.Println("=== hai!  From ===>> ", customer.Name)
+
+}
+
 func main() {
 	fmt.Println("========function=======")
 	for i := 0; i < 10; i++ {
@@ -240,4 +270,34 @@ func main() {
 	runAppRecover(true)
 	fmt.Println("heriipurnama")
 
+	fmt.Println("========= struct =======")
+	var heriipurnama Customer
+	heriipurnama.Name = "heriipurnama"
+	heriipurnama.Address = "Prambanan"
+	heriipurnama.Age = 22
+	fmt.Println("view all data struct=> ", heriipurnama)
+	fmt.Println("nama: ", heriipurnama.Name) // tampil satu2 data
+	fmt.Println("Age: ", heriipurnama.Age)   // Age
+	// representasi data lebih bagus di struct dari pada map apalagi array!
+
+	// struct Literals
+	// mode 1
+	joko := Customer{
+		Name:    "joko",
+		Address: "Ind",
+		Age:     23,
+	}
+	fmt.Println("=====> ", joko)
+
+	// mode 2
+	// budi := Customer{"Budi", "jakarta", 25}
+	/*
+		model diatas rentan Error kalau nama struct ada perubahan
+		better mode 1 recomend karena pemagilan struct didefinisikan
+		per nilai struct nya.
+	*/
+	// fmt.Println("=====> ", budi)
+	fmt.Println("======== struct method =======")
+	heriipurnama.sayHi("Budi")
+	heriipurnama.sayHell()
 }
