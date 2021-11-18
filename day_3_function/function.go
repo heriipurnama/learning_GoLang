@@ -244,6 +244,18 @@ func pembagi(nilai int, pembagi int) (int, error) {
 		return result, nil
 	}
 }
+
+// type assertions
+func random() interface{} {
+	return "heripurnama"
+}
+
+// type 2
+func random2() interface{} {
+	return "heriipurnama" //type string
+	//return 10 //type int
+	//return true //type bool
+}
 func main() {
 	fmt.Println("========function=======")
 	for i := 0; i < 10; i++ {
@@ -414,5 +426,21 @@ func main() {
 		fmt.Println("hasil: ", hasil)
 	} else {
 		fmt.Println("Error: ", err.Error())
+	}
+	// type assertions
+	fmt.Println("==== type assertion ===")
+	var rest interface{} = random()
+	var restString string = rest.(string)
+	fmt.Println("------>>", restString)
+	// with switch
+	var rest2 interface{} = random2()
+	switch value := rest2.(type) {
+	case string:
+		fmt.Println("String", value)
+
+	case int:
+		fmt.Println("Int", value)
+	default:
+		fmt.Println("Unknown", value)
 	}
 }
