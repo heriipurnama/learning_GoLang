@@ -167,14 +167,47 @@ type Customer struct {
 	*/
 }
 
-// struct function/method
-// seolah2 struct punya function
-func (customer Customer) sayHi(name string) {
-	fmt.Println("=== hai! ===", name, "my name is", customer.Name)
+/*
+   interface
+*/
+// type 1
+
+type HasName interface {
+	GetName() string
 }
 
-func (customer Customer) sayHell() {
-	fmt.Println("=== hai!  From ===>> ", customer.Name)
+type Person struct {
+	Name string
+}
+
+// type 2
+type Animal struct {
+	Name string
+}
+
+func (animal Animal) GetName() string {
+	return animal.Name
+}
+
+// interface
+func sayHay(hasName HasName) {
+	fmt.Println("hello: ", hasName.GetName())
+}
+
+func (person Person) GetName() string {
+	return person.Name
+}
+
+// struct function/method
+// seolah2 struct punya function
+// not struc method
+func sayHi(customer Customer, name string) {
+	fmt.Println("=== hai! From", name, "my name is", customer.Name)
+}
+
+// struct method
+func (customer Customer) sayHell(name string) {
+	fmt.Println("=== hai!  From ===>> ", name, "my name is", customer.Name)
 
 }
 
@@ -298,6 +331,16 @@ func main() {
 	*/
 	// fmt.Println("=====> ", budi)
 	fmt.Println("======== struct method =======")
-	heriipurnama.sayHi("Budi")
-	heriipurnama.sayHell()
+	sayHi(heriipurnama, "Budi")  // not struct method
+	heriipurnama.sayHell("Budi") // not struct method
+	// interface
+	fmt.Println("===== interface ==== ")
+	var data Person
+	data.Name = "heriipurnama"
+	sayHay(data)
+	cat := Animal{
+		Name: "Push",
+	}
+
+	sayHay(cat)
 }
