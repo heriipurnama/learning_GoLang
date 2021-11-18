@@ -338,6 +338,7 @@ func main() {
 	var data Person
 	data.Name = "heriipurnama"
 	sayHay(data)
+	// tipe interface 2
 	cat := Animal{
 		Name: "Push",
 	}
