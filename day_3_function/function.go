@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"errors"
+	"fmt"
+)
 
 func sayHelo1() {
 
@@ -211,6 +214,36 @@ func (customer Customer) sayHell(name string) {
 
 }
 
+// interface kosong
+func ups() interface{} {
+	// return 10
+	// return true
+	return "Ups"
+}
+
+// nil
+func newMap(name string) map[string]string {
+	if name == "" {
+		return nil
+	} else {
+		return map[string]string{
+			"name": name}
+	}
+}
+
+// error interface
+type error interface {
+	Error() string
+}
+
+func pembagi(nilai int, pembagi int) (int, error) {
+	if pembagi == 0 {
+		return 0, errors.New("pembagi tidak boleh 0")
+	} else {
+		result := nilai / pembagi
+		return result, nil
+	}
+}
 func main() {
 	fmt.Println("========function=======")
 	for i := 0; i < 10; i++ {
@@ -344,4 +377,42 @@ func main() {
 	}
 
 	sayHay(cat)
+	fmt.Println("==== interface kosong ==== ")
+	kosong := ups()
+	fmt.Println("kosong", kosong)
+	fmt.Println("=== nil ===")
+	var lake map[string]string = nil
+	fmt.Println("====nil,", lake)
+	building := newMap("stadion")
+	fmt.Println("building", building)
+	// option nil
+	var tree map[string]string = newMap("jeruk")
+	//var tree map[string]string = newMap("") // cek ketika data kosong
+
+	if tree == nil {
+		fmt.Println("Data Kosong")
+	} else {
+		fmt.Println("tree", tree)
+	}
+	/*
+	   Note :
+	   *Nil hanya bisa digunakan dibeberapa tipe data,
+	     - interface
+	     - function
+	     - map
+	     - slice
+	     - pointer
+	     - channel
+	*/
+
+	// error interface
+	fmt.Println("=== error ===")
+	var contohError error = errors.New("ups errror")
+	fmt.Println(contohError.Error())
+	hasil, err := pembagi(200, 0)
+	if err == nil {
+		fmt.Println("hasil: ", hasil)
+	} else {
+		fmt.Println("Error: ", err.Error())
+	}
 }
