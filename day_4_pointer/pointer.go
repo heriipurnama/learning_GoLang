@@ -2,8 +2,45 @@ package main
 
 import "fmt"
 
+/*
+	pointer function di parameter
+*/
+
 type Address struct {
 	City, Province, Country string
+}
+
+type Address12 struct {
+	City, Province, Country string
+}
+
+func changgeAdressIndonesia(address *Address) { // Dengan Pointer * , untuk menangani banyak value yang ada
+	//dalam satu waktu agar tidak copy data dan menghemat memory
+	address.Country = "Indonesia"
+}
+
+func changgeAdressIndonesia1(address12 Address12) { // Bukan Pointer
+	address12.Country = "Indonesia"
+}
+
+/*
+	pointer function , sebelum function
+*/
+
+type Man struct {
+	Name string
+}
+
+type Female struct {
+	Name string
+}
+
+func (man *Man) Married() {
+	man.Name = "Mr." + man.Name
+}
+
+func (female Female) Married1() {
+	female.Name = "Mss." + female.Name
 }
 
 func main() {
@@ -73,4 +110,26 @@ func main() {
 	var adr4 *Address = new(Address)
 	adr4.City = "Aceh"
 	fmt.Println("adr4==> ", adr4)
+
+	fmt.Println("=== pointer on function ===")
+	address := Address{"Subang", "Jawa Barat", ""}
+	address12 := Address12{"Subang", "Jawa Barat", ""}
+
+	changgeAdressIndonesia(&address)
+	fmt.Println("===", address, "===")
+	// cara kedua
+	var addressPointer *Address = &address
+	fmt.Println("addressPointer==> ", addressPointer)
+	// Bukan pointers
+	changgeAdressIndonesia1(address12)
+	fmt.Println("=== Not Pointer can Change value -->", address12)
+	// Pointer on METHOD
+	fmt.Println("==== pointer method ====")
+	herii := Man{"Herii."}
+	herii.Married()
+	fmt.Println("dengan pointer===>> ", herii.Name)
+
+	sofy := Female{"Sofy."}
+	sofy.Married1()
+	fmt.Println("tdk dengan pointer===>> ", sofy.Name)
 }
