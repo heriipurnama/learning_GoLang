@@ -32,7 +32,7 @@ type Man struct {
 }
 
 type Female struct {
-	Name s9tring
+	Name string
 }
 
 func (man *Man) Married() {
