@@ -2,7 +2,7 @@
 
 learning_GoLang
 
-1. Golang - Dasar 
+1. [Golang - Dasar](https://github.com/heriipurnama/learning_GoLang/tree/Golang-Dasar)
 
 [![alt text][image]][hyperlink]
 
