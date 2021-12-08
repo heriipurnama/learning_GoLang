@@ -12,5 +12,5 @@ func main() {
 	fmt.Println(strings.ToUpper("heriipurnama s"))
 
 	fmt.Println(strings.Trim(" heriipurnama ", " "))
-	fmt.Println(strings.ReplaceAll("heriipurnama heriipurnama heriipurnama", "heriipurnama", "sofy"))
+	fmt.Println(strings.ReplaceAll("heriipurnama heriipurnama heriipurnama", "heriipurnama", "retno"))
 }
