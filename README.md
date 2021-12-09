@@ -2,7 +2,7 @@
 
 learning_GoLang
 
-1. Golang - Dasar
+1. Golang - Modules
 
 [![alt text][image]][hyperlink]
 
