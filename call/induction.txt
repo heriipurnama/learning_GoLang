@@ -1,0 +1,15 @@
+GoogleSearcHTest
+
+shouldShowBiography
+    searchher = new Google()
+    searchContentPage = searcher.searh("calvin harris")
+    assertTrue(searchContentPage.hasBiographyBox())
+
+shouldShowCalculator
+    searcher = new Goole()
+    searchContentPage = searcher.search("1+2")
+    assertTrue(searchContentPage.hasCalculator())
+shouldShowNotFoundpage
+    searcher = new Google()
+    seaarchContentPage = searcher.search("ssasnambdajbds012012dnjsh389283")
+    assertTrue(seaarchContentPage.hasNotFound())
