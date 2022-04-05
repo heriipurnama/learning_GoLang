@@ -1,0 +1,3 @@
+# github.com/heriipurnama/go-say-hai v0.0.0-20211209045628-60c22f8a2c41
+## explicit
+github.com/heriipurnama/go-say-hai
