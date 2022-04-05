@@ -8,4 +8,4 @@ learning_GoLang
 
 3. [Golang - Unit Test](https://github.com/heriipurnama/learning_GoLang/tree/unit_test)
 
-Author : [heriipurnama](www.heriipurnama.ga)
+Author : [www.heriipurnama.ga](http://www.heriipurnama.ga/)
