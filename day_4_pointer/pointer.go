@@ -3,6 +3,10 @@ package main
 import "fmt"
 
 /*
+    Pointer alamat dari data memory.
+        & = operator return adress / function
+        * = operator return data
+
 	pointer function di parameter
 */
 
