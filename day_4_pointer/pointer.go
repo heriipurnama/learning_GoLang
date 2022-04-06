@@ -136,4 +136,10 @@ func main() {
 	sofy := Female{"Sofy."}
 	sofy.Married1()
 	fmt.Println("tdk dengan pointer===>> ", sofy.Name)
+
+	// sebuah function untuk membuat variabel dan me return sebuah pointer ke variabel yga dituju.
+	pointer := new(int)
+	*pointer = 3
+	fmt.Println("pointer", pointer)  // return alamat dari pointer
+	fmt.Println("pointer", *pointer) // return data
 }
