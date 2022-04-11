@@ -8,4 +8,6 @@ learning_GoLang
 
 3. [Golang - Unit Test](https://github.com/heriipurnama/learning_GoLang/tree/unit_test)
 
+4. [Golang - Minimal App](https://github.com/heriipurnama/learning_GoLang/tree/Minimal_App)
+
 Author : [www.heriipurnama.ga](http://www.heriipurnama.ga/)
