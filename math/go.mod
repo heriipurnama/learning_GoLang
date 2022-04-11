@@ -1,3 +1,3 @@
-module learning_GoLang/math
+module math
 
 go 1.15
