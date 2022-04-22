@@ -10,4 +10,6 @@ learning_GoLang
 
 4. [Golang - Minimal App](https://github.com/heriipurnama/learning_GoLang/tree/Minimal_App)
 
+5. [Golang - Rest Go-GIN](https://github.com/heriipurnama/learning_GoLang/tree/rest_go-gin)
+
 Author : [www.heriipurnama.ga](http://www.heriipurnama.ga/)
