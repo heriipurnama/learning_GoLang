@@ -21,3 +21,8 @@ Go- GIN
     "Price": 56.99
     }
     ```
+
+# Command Run with
+
+1. go mod vendor --> to download dependencies
+2. go run main.go
